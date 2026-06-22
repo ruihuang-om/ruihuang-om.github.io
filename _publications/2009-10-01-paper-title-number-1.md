@@ -10,4 +10,4 @@ venue: 'Journal 1'
 paperurl: 'https://doi.org/10.1177/01956574251368288'
 # bibtexurl: 'https://academicpages.github.io/files/bibtex1.bib'
 citation: 'Huang, R., Gou, Q., & Zhang, J. (2026). Participation of Variable Renewable Generators in Forward Markets: A Game-Theoretic Analysis. The Energy Journal, 47(1), 165-192.'
---
+---
