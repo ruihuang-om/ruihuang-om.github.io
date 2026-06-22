@@ -3,7 +3,7 @@ title: "Participation of Variable Renewable Generators in Forward Markets: A Gam
 collection: publications
 category: manuscripts
 permalink: /publication/2026-01-01-paper-title-number-1
-excerpt: 'This paper is about the number 1. The number 2 is left for future work.'
+# excerpt: 'This paper is about the number 1. The number 2 is left for future work.'
 date: 2026-01-01
 venue: 'Journal 1'
 # slidesurl: 'https://academicpages.github.io/files/slides1.pdf'
