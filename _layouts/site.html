@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="{{ site.locale | default: 'en-US' }}">
+  <head>
+    {% include head.html %}
+    <link rel="stylesheet" href="{{ '/assets/css/academic-home.css' | relative_url }}">
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div class="site-shell">
+      {% include site-header.html %}
+      <main id="main-content" class="site-main">
+        {{ content }}
+      </main>
+      <footer class="site-footer">
+        <span>&copy; {{ 'now' | date: '%Y' }} Rui Huang</span>
+        <span>Built with Jekyll and GitHub Pages</span>
+      </footer>
+    </div>
+  </body>
+</html>

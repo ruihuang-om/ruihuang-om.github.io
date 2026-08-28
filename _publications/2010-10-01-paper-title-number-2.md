@@ -1,4 +1,5 @@
 ---
+published: false
 title: "Retail Competition, Consumer Switching, and Forward Hedging in Electricity Markets"
 collection: publications
 category: manuscripts

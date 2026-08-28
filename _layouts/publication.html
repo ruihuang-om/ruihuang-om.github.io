@@ -1,0 +1,30 @@
+---
+layout: site
+---
+<article class="publication-detail">
+  <p class="eyebrow">Research</p>
+  <h1>{{ page.title }}</h1>
+
+  {% if page.authors %}
+    <p class="publication-detail__authors">
+      {% for author in page.authors %}
+        {% if author == "Rui Huang" %}<strong>{{ author }}</strong>{% else %}{{ author }}{% endif %}{% unless forloop.last %}, {% endunless %}
+      {% endfor %}
+    </p>
+  {% endif %}
+
+  <p class="publication-detail__meta"><em>{{ page.venue }}</em>{% if page.year %}, {{ page.year }}{% endif %}.</p>
+
+  {% if page.paperurl or page.doi %}
+    <p class="publication-detail__links">
+      {% if page.paperurl %}<a href="{{ page.paperurl }}">Download paper</a>{% endif %}
+      {% if page.doi %}<a href="{{ page.doi }}">View DOI</a>{% endif %}
+    </p>
+  {% endif %}
+
+  {% if content and content != empty %}
+    <div class="publication-detail__body">{{ content }}</div>
+  {% endif %}
+
+  <p class="publication-detail__back"><a href="{{ '/research/' | relative_url }}">&larr; Back to Research</a></p>
+</article>

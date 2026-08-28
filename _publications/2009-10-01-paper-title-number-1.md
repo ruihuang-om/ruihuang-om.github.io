@@ -1,4 +1,5 @@
 ---
+published: false
 title: "Participation of Variable Renewable Generators in Forward Markets: A Game-Theoretic Analysis"
 collection: publications
 category: manuscripts

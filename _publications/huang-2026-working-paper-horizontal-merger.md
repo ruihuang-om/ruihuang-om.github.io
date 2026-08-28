@@ -1,11 +1,19 @@
 ---
-title: "Horizontal Mergers in Electricity Markets: Forward Contracting, Renewable Generation, and Welfare (Working Paper)"
+title: "Horizontal Mergers in Electricity Markets: Forward Contracting, Renewable Generation, and Welfare"
 collection: publications
-category: working_papers
-permalink: /publication/working-paper-electricity-markets
+category: under_review
+permalink: /publication/horizontal-mergers-electricity-markets
 date: 2026-01-01
-venue: "Working Paper"
-# excerpt: "This paper studies retail competition and forward hedging in electricity markets."
+authors:
+  - "Rui Huang"
+  - "Jason Nguyen"
+  - "Qinglong Gou"
+  - "Juzhi Zhang"
+venue: "Under review at Production and Operations Management"
+year: 2026
 paperurl: ""
+doi: ""
+selected: true
+order: 3
 citation: "Huang, R., Nguyen, J., Gou, Q. & Zhang, J. Horizontal Mergers in Electricity Markets: Forward Contracting, Renewable Generation, and Welfare. Working Paper."
 ---

@@ -1,0 +1,16 @@
+<header class="site-header">
+  <nav class="site-nav" aria-label="Primary navigation">
+    {% for link in site.data.navigation.main %}
+      {% assign active = false %}
+      {% assign link_key = link.title | downcase %}
+      {% if page.url == link.url or page.nav_key == link_key %}
+        {% assign active = true %}
+      {% endif %}
+      <a class="site-nav__link{% if active %} is-active{% endif %}"
+         href="{{ link.url | relative_url }}"
+         {% if link.external %}target="_blank" rel="noopener"{% endif %}>
+        {{ link.title }}
+      </a>
+    {% endfor %}
+  </nav>
+</header>

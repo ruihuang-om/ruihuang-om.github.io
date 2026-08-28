@@ -1,0 +1,19 @@
+<li class="research-entry">
+  <h3 class="research-entry__title">
+    <a href="{{ include.post.url | relative_url }}">{{ include.post.title }}</a>
+  </h3>
+  {% if include.post.authors %}
+    <p class="research-entry__authors">
+      {% for author in include.post.authors %}
+        {% if author == "Rui Huang" %}<strong>{{ author }}</strong>{% else %}{{ author }}{% endif %}{% unless forloop.last %}, {% endunless %}
+      {% endfor %}
+    </p>
+  {% endif %}
+  <p class="research-entry__meta"><em>{{ include.post.venue }}</em>{% if include.post.year %}, {{ include.post.year }}{% endif %}.</p>
+  {% if include.post.paperurl or include.post.doi %}
+    <p class="research-entry__links">
+      {% if include.post.paperurl %}<a href="{{ include.post.paperurl }}">Paper</a>{% endif %}
+      {% if include.post.doi %}<a href="{{ include.post.doi }}">DOI</a>{% endif %}
+    </p>
+  {% endif %}
+</li>

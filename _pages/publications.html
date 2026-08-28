@@ -1,36 +1,53 @@
 ---
-layout: archive
-title: "Publications"
-permalink: /publications/
-author_profile: true
+layout: site
+title: "Research"
+permalink: /research/
+nav_key: research
+redirect_from:
+  - /publications/
 ---
 
-<div class="wordwrap">
-  You can also find my articles on
-  <a href="https://scholar.google.com/citations?hl=en&user=eUqRlogAAAAJ">
-    my Google Scholar profile
-  </a>.
-</div>
+<header class="page-intro">
+  <p class="eyebrow">Research portfolio</p>
+  <h1 class="page-heading">Research</h1>
+  <p>My research examines sustainable operations, electricity markets, energy-efficiency investment, and supply chain contracting. You can also find my work on <a href="{{ site.author.googlescholar }}" target="_blank" rel="noopener">Google Scholar</a>.</p>
+</header>
 
-{% include base_path %}
+{% assign visible_publications = site.publications | where_exp: "post", "post.published != false" %}
 
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
-    {% endfor %}
-  {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
+{% assign published_papers = visible_publications | where: "category", "published" | sort: "order" %}
+{% if published_papers.size > 0 %}
+  <section class="research-section">
+    <h2>Publications</h2>
+    <ol class="research-list">
+      {% for post in published_papers %}
+        {% include research-entry.html post=post %}
+      {% endfor %}
+    </ol>
+  </section>
+{% endif %}
+
+{% assign review_papers = visible_publications | where: "category", "under_review" | sort: "order" %}
+{% if review_papers.size > 0 %}
+  <section class="research-section">
+    <h2>Papers Under Review</h2>
+    <ol class="research-list" start="{{ published_papers.size | plus: 1 }}">
+      {% for post in review_papers %}
+        {% include research-entry.html post=post %}
+      {% endfor %}
+    </ol>
+  </section>
+{% endif %}
+
+{% assign working_papers = visible_publications | where: "category", "working_papers" | sort: "order" %}
+{% if working_papers.size > 0 %}
+  {% assign working_start = published_papers.size | plus: review_papers.size | plus: 1 %}
+  <section class="research-section">
+    <h2>Working Papers</h2>
+    <ol class="research-list" start="{{ working_start }}">
+      {% for post in working_papers %}
+        {% include research-entry.html post=post %}
+      {% endfor %}
+    </ol>
+  </section>
 {% endif %}
